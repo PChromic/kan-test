@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.sii'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(libs.selenide)
+    implementation(libs.log4j)
+    implementation(libs.hibernate.core)
+    testImplementation(libs.rest.assured)
+    testImplementation(libs.test.ng)
+}
+
+test {
+    useTestNG()
+}

@@ -1,0 +1,13 @@
+[versions]
+selenide = '7.15.0'
+rest_assured = '5.5.6'
+testng = '7.12.0'
+log4j = '2.26.0'
+hibernate_core = '7.3.6.Final'
+
+[libraries]
+selenide = { module = "com.codeborne:selenide", version.ref = "selenide" }
+rest_assured = { module = "io.rest-assured:rest-assured", version.ref = "rest_assured" }
+test_ng = { module = "org.testng:testng", version.ref = "testng" }
+log4j = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
+hibernate_core = {module = "org.hibernate:hibernate-core", version.ref = "hibernate_core" }
