@@ -12,6 +12,7 @@ repositories {
 dependencies {
     implementation(libs.selenide)
     implementation(libs.log4j)
+    implementation(libs.lombok)
     implementation(libs.hibernate.core)
     testImplementation(libs.rest.assured)
     testImplementation(libs.test.ng)
