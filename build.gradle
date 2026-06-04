@@ -16,6 +16,7 @@ dependencies {
     implementation(libs.hibernate.core)
     testImplementation(libs.rest.assured)
     testImplementation(libs.test.ng)
+    testImplementation(libs.faker)
 }
 
 test {
