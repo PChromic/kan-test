@@ -14,7 +14,7 @@ dependencies {
     implementation(libs.log4j)
     implementation(libs.lombok)
     implementation(libs.hibernate.core)
-    testImplementation(libs.rest.assured)
+    implementation(libs.rest.assured)
     testImplementation(libs.test.ng)
     implementation(libs.faker)
 }
