@@ -6,6 +6,7 @@ log4j = '2.26.0'
 hibernate_core = '7.3.6.Final'
 lombok = '1.18.46'
 faker = '2.5.4'
+jackson_databind = '2.20.1'
 
 [libraries]
 selenide = { module = "com.codeborne:selenide", version.ref = "selenide" }
@@ -15,3 +16,4 @@ log4j = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" 
 hibernate_core = {module = "org.hibernate:hibernate-core", version.ref = "hibernate_core" }
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 faker = { module = "net.datafaker:datafaker", version.ref = "faker" }
+jackson_databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson_databind" }
