@@ -13,10 +13,9 @@ public class LoginPage extends LoadableComponent<LoginPage> {
 
     private final SelenideElement emailInput = $("input[name='email']");
     private final SelenideElement passwordInput = $("input[name='password']");
-    private final SelenideElement passwordToggleButton = $("input[name='password'] ~ button[type='button']");
     private final SelenideElement magicLinkButton = $("button.w-full");
-    private final SelenideElement signUpLink = $("a[href='/signup']");
-    private BoardsOverviewPage boardsOverviewPage = new BoardsOverviewPage();
+    private final SelenideElement invalidEmailAlert = $x("//p[text()='Please enter a valid email address']");
+    private final SelenideElement invalidPasswordAlert = $x("//p[text()='Invalid email or password']");
 
     @Override
     public void load() {
@@ -43,18 +42,23 @@ public class LoginPage extends LoadableComponent<LoginPage> {
         return this;
     }
 
-    public LoginPage togglePasswordVisibility() {
-        passwordToggleButton.click();
-        return this;
-    }
-
-    public BoardsOverviewPage clickMagicLink() {
+    public BoardsOverviewPage submitLogin_ExpectSuccess() {
         magicLinkButton.click();
         return new BoardsOverviewPage().get();
     }
 
-    public LoginPage clickSignUp() {
-        signUpLink.click();
+    public LoginPage submitLogin() {
+        magicLinkButton.click();
+        return this;
+    }
+
+    public LoginPage validateInvalidEmailAlertIsVisible() {
+        invalidEmailAlert.shouldBe(visible);
+        return this;
+    }
+
+    public LoginPage validateInvalidPasswordAlertIsVisible() {
+        invalidPasswordAlert.shouldBe(visible);
         return this;
     }
 }
