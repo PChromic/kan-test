@@ -12,7 +12,8 @@ repositories {
 dependencies {
     implementation(libs.selenide)
     implementation(libs.log4j)
-    implementation(libs.lombok)
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
     implementation(libs.hibernate.core)
     implementation(libs.rest.assured)
     testImplementation(libs.test.ng)
