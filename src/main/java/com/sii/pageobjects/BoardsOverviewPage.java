@@ -4,25 +4,26 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.SelenideElement;
 import com.sii.pageobjects.newentity.NewBoardComponent;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.util.NoSuchElementException;
 
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.urlContaining;
+import static java.util.Arrays.asList;
 
 public class BoardsOverviewPage extends BasePage<BoardsOverviewPage> {
 
     private static final String PAGE_URL = "/boards";
 
-    private final SelenideElement heading = $("h1");
-    private final SelenideElement importButton = $x("//button[.//span[text()='Importuj']]");
-    private final SelenideElement newBoardButton = $x("//button[.//span[text()='Nowy']]");
+    private final SelenideElement importButton = $x("//button[.//span[text()='Import']]");
+    private final SelenideElement newBoardButton = $x("//button[.//span[text()='New']]");
     private final SelenideElement activeTab = $x("//button[@type='button' and text()='Active']");
     private final SelenideElement archivedTab = $x("//button[@type='button' and text()='Archived']");
+    private final SelenideElement noBoardsMessage = $x("//p[text()='Get started by creating a new board']");
     private final By boardCards = By.cssSelector("a[href^='/boards/']");
-    private BoardItem boardItem = new BoardItem();
-    private NewBoardComponent newBoardComponent = new NewBoardComponent();
+    private final BoardItem boardItem = new BoardItem();
+    private final NewBoardComponent newBoardComponent = new NewBoardComponent();
 
     @Override
     public void load() {
@@ -33,8 +34,9 @@ public class BoardsOverviewPage extends BasePage<BoardsOverviewPage> {
     public void isLoaded() throws Error {
         try {
             webdriver().shouldHave(urlContaining(PAGE_URL));
-            heading.shouldBe(visible);
-            $$(boardCards).should(CollectionCondition.allMatch("asda,asd", element -> element.isDisplayed()));
+            $$(asList(noBoardsMessage, $(boardCards)))
+                    .should(CollectionCondition.anyMatch("Should display board overview main component wrapper",
+                            WebElement::isDisplayed));
         } catch (IllegalStateException e) {
             throw new Error(e);
         }
@@ -60,6 +62,7 @@ public class BoardsOverviewPage extends BasePage<BoardsOverviewPage> {
 
     public BoardItem getBoardCardByName(String name) {
         var board = $$(boardCards)
+                .asDynamicIterable()
                 .stream()
                 .map(x -> x.find(By.cssSelector("p")))
                 .filter(element -> element.getText().equals(name))
@@ -73,6 +76,7 @@ public class BoardsOverviewPage extends BasePage<BoardsOverviewPage> {
         validateBoardWithNameIsVisible(name);
         return this;
     }
+
     public BoardsOverviewPage validateBoardWithNameIsNotActive(String name) {
         validateBoardWithNameIsNotVisible(name);
         return this;
@@ -82,6 +86,7 @@ public class BoardsOverviewPage extends BasePage<BoardsOverviewPage> {
         validateBoardWithNameIsVisible(name);
         return this;
     }
+
     public BoardsOverviewPage validateBoardWithNameIsNotArchived(String name) {
         validateBoardWithNameIsNotVisible(name);
         return this;
@@ -91,6 +96,7 @@ public class BoardsOverviewPage extends BasePage<BoardsOverviewPage> {
         $$(boardCards).should(CollectionCondition.anyMatch("text", element -> element.getText().equals(name))
                 .because("Board with name " + name + " should be visible in active boards list"));
     }
+
     private void validateBoardWithNameIsNotVisible(String name) {
         $$(boardCards).should(CollectionCondition.noneMatch("text", element -> element.getText().equals(name))
                 .because("Board with name " + name + " should be visible in active boards list"));

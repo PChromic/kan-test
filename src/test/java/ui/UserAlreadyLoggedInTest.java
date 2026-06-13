@@ -1,10 +1,10 @@
 package ui;
 
 import com.sii.pageobjects.LoginPage;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import static com.codeborne.selenide.Selenide.localStorage;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public abstract class UserAlreadyLoggedInTest extends BaseTest {
 
@@ -18,5 +18,10 @@ public abstract class UserAlreadyLoggedInTest extends BaseTest {
                 .enterEmail(VALID_EMAIL)
                 .enterPassword(VALID_PASSWORD)
                 .submitLogin_ExpectSuccess();
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public final void _afterMethod() {
+        closeWebDriver();
     }
 }

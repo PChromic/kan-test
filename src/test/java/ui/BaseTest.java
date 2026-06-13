@@ -15,9 +15,9 @@ public class BaseTest {
     static final String VALID_EMAIL = PROPERTIES.getProperty("user.email");
     static final String VALID_PASSWORD = PROPERTIES.getProperty("user.password");
     static final String LOCALE = PROPERTIES.getProperty("user.locale");
+    static final String WORKSPACE_ID = PROPERTIES.getProperty("user.workspacePublicId");
 
     @BeforeClass
-
     public void initBrowserCapabilities() {
         var localeParam = "lang=" + LOCALE;
         switch (browser) {

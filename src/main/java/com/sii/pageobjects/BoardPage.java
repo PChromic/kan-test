@@ -12,19 +12,20 @@ public class BoardPage extends BasePage<BoardPage> {
     private static final String PAGE_URL = "/boards/";
 
     private final SelenideElement boardNameInput = $("input#name[name='name']");
-    private final SelenideElement copyLinkButton = $("button[aria-label='Kopiuj link do tablicy']");
-    private final SelenideElement visibilityButton = $x("//button[.//span[text()='Widoczność']]");
-    private final SelenideElement filterButton = $x("//button[.//span[text()='Filtruj']]");
-    private final SelenideElement newListButton = $x("//button[.//span[text()='Nowa lista']]");
+    private final SelenideElement copyLinkButton = $("button[aria-label='Copy board link']");
+    private final SelenideElement visibilityButton = $x("//button[.//span[text()='Visibility']]");
+    private final SelenideElement filterButton = $x("//button[.//span[text()='Filter']]");
+    private final SelenideElement newListButton = $x("//button[.//span[text()='New list']]");
     private final SelenideElement optionsMenu = $("button[class='flex h-7 w-7 items-center justify-center rounded-[5px] hover:bg-light-200 focus:outline-none dark:hover:bg-dark-200']");
     private final NewCardComponent newCardComponent = new NewCardComponent();
     private final BoardsOverviewPage boardsOverviewPage = new BoardsOverviewPage();
 
     // Options menu items (visible after clickOptionsMenu())
-    private final SelenideElement editBoardUrlMenuItem = $x("//button[@role='menuitem' and contains(text(),'Edytuj URL tablicy')]");
-    private final SelenideElement archiveBoardMenuItem = $x("//button[@role='menuitem' and contains(text(),'Zarchiwizuj tablicę')]");
-    private final SelenideElement removeFromFavouritesMenuItem = $x("//button[@role='menuitem' and contains(text(),'Usuń z ulubionych')]");
-    private final SelenideElement deleteBoardMenuItem = $x("//button[@role='menuitem' and contains(text(),'Usuń tablicę')]");
+    private final SelenideElement editBoardUrlMenuItem = $x("//button[@role='menuitem' and contains(text(),'Edit board URL')]");
+    private final SelenideElement archiveBoardMenuItem = $x("//button[@role='menuitem' and contains(text(),'Archive board')]");
+    private final SelenideElement addToFavouritesMenuItem = $x("//button[@role='menuitem' and contains(text(),'Add to favourites')]");
+    private final SelenideElement removeFromFavouritesMenuItem = $x("//button[@role='menuitem' and contains(text(),'Remove from favourites')]");
+    private final SelenideElement deleteBoardMenuItem = $x("//button[@role='menuitem' and contains(text(),'Delete board')]");
 
     @Override
     public void load() {
