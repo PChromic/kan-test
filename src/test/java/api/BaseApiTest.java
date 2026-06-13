@@ -8,6 +8,6 @@ public class BaseApiTest {
     private static final Properties PROPERTIES = PropertiesLoader.readPropertiesFromFile("testData.properties");
 
     protected String getWorkspacePublicId() {
-        return PROPERTIES.getProperty("workspacePublicId");
+        return PROPERTIES.getProperty("user.workspacePublicId");
     }
 }

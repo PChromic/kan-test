@@ -1,6 +1,8 @@
 package com.sii.utils;
 
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.specification.RequestSpecification;
 
 import java.util.Properties;
@@ -12,7 +14,9 @@ public final class ApiConfig {
 
     public static RequestSpecification createRequestSpec(boolean includeAuth) {
         var builder = new RequestSpecBuilder()
-                .setBaseUri(BASE_URL);
+                .setBaseUri(BASE_URL)
+                .addFilter(new RequestLoggingFilter())
+                .addFilter(new ResponseLoggingFilter());
         if (includeAuth) {
             builder.addHeader("Authorization", "Bearer " + BEARER_TOKEN);
         }
