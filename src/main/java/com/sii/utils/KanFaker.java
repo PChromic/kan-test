@@ -15,6 +15,6 @@ public class KanFaker {
     }
 
     public static String boardName() {
-        return faker.lordOfTheRings().character();
+        return faker.numerify(faker.lordOfTheRings().character()+"###");
     }
 }
