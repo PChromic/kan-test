@@ -1,0 +1,4 @@
+name: kan
+
+include:
+  - app/docker-compose.yml
