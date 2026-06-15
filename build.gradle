@@ -19,6 +19,7 @@ dependencies {
     testImplementation(libs.test.ng)
     implementation(libs.faker)
     implementation(libs.jackson.databind)
+    implementation(libs.postgresql)
 }
 
 test {
