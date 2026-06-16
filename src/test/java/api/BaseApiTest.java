@@ -5,7 +5,7 @@ import org.testng.annotations.AfterSuite;
 
 import java.util.Properties;
 
-import static com.sii.db.HibernateUtil.EMF;
+import static com.sii.utils.HibernateUtil.EMF;
 
 public class BaseApiTest {
     private static final Properties PROPERTIES = PropertiesLoader.readPropertiesFromFile("testData.properties");

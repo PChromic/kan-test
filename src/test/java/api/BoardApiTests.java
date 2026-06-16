@@ -1,6 +1,6 @@
 package api;
 
-import com.sii.entity.Board;
+import com.sii.domain.dto.Board;
 import com.sii.rest.BoardsApi;
 import com.sii.utils.KanFaker;
 import org.testng.annotations.Test;

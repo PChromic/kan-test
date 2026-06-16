@@ -1,6 +1,5 @@
-package com.sii.db;
+package com.sii.utils;
 
-import com.sii.utils.PropertiesLoader;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

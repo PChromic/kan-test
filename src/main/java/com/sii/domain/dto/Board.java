@@ -1,8 +1,7 @@
-package com.sii.entity;
+package com.sii.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.sii.utils.KanFaker;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

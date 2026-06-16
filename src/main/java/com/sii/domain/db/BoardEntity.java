@@ -1,4 +1,4 @@
-package com.sii.entity.db;
+package com.sii.domain.db;
 
 import jakarta.persistence.*;
 import lombok.Getter;

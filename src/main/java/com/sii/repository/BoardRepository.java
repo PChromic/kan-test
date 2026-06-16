@@ -1,6 +1,7 @@
-package com.sii.db;
+package com.sii.repository;
 
-import com.sii.entity.db.BoardEntity;
+import com.sii.domain.db.BoardEntity;
+import com.sii.utils.HibernateUtil;
 
 import java.util.List;
 

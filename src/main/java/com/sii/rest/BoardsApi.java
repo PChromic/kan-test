@@ -1,6 +1,6 @@
 package com.sii.rest;
 
-import com.sii.entity.Board;
+import com.sii.domain.dto.Board;
 import io.restassured.response.Response;
 
 import static com.sii.utils.ApiConfig.createRequestSpec;

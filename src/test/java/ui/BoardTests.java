@@ -1,6 +1,6 @@
 package ui;
 
-import com.sii.entity.Board;
+import com.sii.domain.dto.Board;
 import com.sii.pageobjects.BoardsOverviewPage;
 import com.sii.rest.BoardsApi;
 import com.sii.utils.KanFaker;
