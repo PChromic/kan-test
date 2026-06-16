@@ -8,6 +8,8 @@ lombok = '1.18.46'
 faker = '2.5.4'
 jackson_databind = '2.20.1'
 postgresql = '42.7.4'
+mapstruct = '1.6.3'
+lombok_mapstruct_binding = '0.2.0'
 
 [libraries]
 selenide = { module = "com.codeborne:selenide", version.ref = "selenide" }
@@ -19,3 +21,6 @@ lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 faker = { module = "net.datafaker:datafaker", version.ref = "faker" }
 jackson_databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson_databind" }
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+mapstruct = {module = "org.mapstruct:mapstruct", version.ref = "mapstruct"}
+mapstruct_processor = {module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct"}
+lombok_mapstruct_binding = {module = "org.projectlombok:lombok-mapstruct-binding", version.ref = "lombok_mapstruct_binding"}
