@@ -2,6 +2,22 @@
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
     <persistence-unit name="kan" transaction-type="RESOURCE_LOCAL">
         <class>com.sii.domain.db.BoardEntity</class>
+        <class>com.sii.domain.db.CardEntity</class>
+        <class>com.sii.domain.db.CardActivityEntity</class>
+        <class>com.sii.domain.db.CardAttachmentEntity</class>
+        <class>com.sii.domain.db.CardChecklistEntity</class>
+        <class>com.sii.domain.db.CardChecklistItemEntity</class>
+        <class>com.sii.domain.db.CardCommentsEntity</class>
+        <class>com.sii.domain.db.LabelEntity</class>
+        <class>com.sii.domain.db.ListEntity</class>
+        <class>com.sii.domain.db.UserEntity</class>
+        <class>com.sii.domain.db.WorkspaceEntity</class>
+        <class>com.sii.domain.db.WorkspaceInviteLinksEntity</class>
+        <class>com.sii.domain.db.WorkspaceMemberPermissionsEntity</class>
+        <class>com.sii.domain.db.WorkspaceMembersEntity</class>
+        <class>com.sii.domain.db.WorkspaceRolePermissionsEntity</class>
+        <class>com.sii.domain.db.WorkspaceRolesEntity</class>
+        <class>com.sii.domain.db.WorkspaceWebhooksEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
     </persistence-unit>
 </persistence>
