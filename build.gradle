@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.sii'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(libs.selenide)
+    implementation(libs.log4j)
+    implementation(libs.mapstruct)
+    annotationProcessor(libs.mapstruct.processor)
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
+    annotationProcessor(libs.lombok.mapstruct.binding)
+    implementation(libs.hibernate.core)
+    implementation(libs.rest.assured)
+    testImplementation(libs.test.ng)
+    implementation(libs.faker)
+    implementation(libs.jackson.databind)
+    implementation(libs.postgresql)
+}
+
+test {
+    useTestNG()
+}

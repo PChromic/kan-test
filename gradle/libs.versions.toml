@@ -1,0 +1,26 @@
+[versions]
+selenide = '7.15.0'
+rest_assured = '5.5.6'
+testng = '7.12.0'
+log4j = '2.26.0'
+hibernate_core = '7.3.6.Final'
+lombok = '1.18.46'
+faker = '2.5.4'
+jackson_databind = '2.20.1'
+postgresql = '42.7.4'
+mapstruct = '1.6.3'
+lombok_mapstruct_binding = '0.2.0'
+
+[libraries]
+selenide = { module = "com.codeborne:selenide", version.ref = "selenide" }
+rest_assured = { module = "io.rest-assured:rest-assured", version.ref = "rest_assured" }
+test_ng = { module = "org.testng:testng", version.ref = "testng" }
+log4j = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
+hibernate_core = {module = "org.hibernate:hibernate-core", version.ref = "hibernate_core" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+faker = { module = "net.datafaker:datafaker", version.ref = "faker" }
+jackson_databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson_databind" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+mapstruct = {module = "org.mapstruct:mapstruct", version.ref = "mapstruct"}
+mapstruct_processor = {module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct"}
+lombok_mapstruct_binding = {module = "org.projectlombok:lombok-mapstruct-binding", version.ref = "lombok_mapstruct_binding"}

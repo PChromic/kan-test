@@ -41,3 +41,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Properties ###
+secrets.properties
+database.properties
+app/.env
